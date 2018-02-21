@@ -1,4 +1,6 @@
 #! /usr/bin/env python
+import re
+
 ip1 = '1.2.3.4'
 ip2 = '1.3.4.5'
 
@@ -18,6 +20,8 @@ ip_num_1st = int( ip1_list[0] )
 ip_num_2nd = int( ip1_list[1] )
 ip_num_3rd = int( ip1_list[2] )
 ip_num_4th = int( ip1_list[3] )
+
+p = re.compile( '^(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|[1-9])\\.(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\.(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)\\.(1\\d{2}|2[0-4]\\d|25[0-5]|[1-9]\\d|\\d)$' )
 
 while True:
 	curr_ip = str(ip_num_1st) + '.' + str(ip_num_2nd) + '.' + str(ip_num_3rd) + '.' + str(ip_num_4th)
